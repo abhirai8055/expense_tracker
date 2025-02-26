@@ -1,0 +1,633 @@
+{
+	"info": {
+		"_postman_id": "9a1344b3-4d5c-4af5-9d7a-24c3c3e7a523",
+		"name": "expense",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41682364"
+	},
+	"item": [
+		{
+			"name": "signup",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"firstName\":\"abhi\",\r\n\"lastName\":\"rai\",\r\n\"email\":\"abhijeetrai7985@gmail.com\",\r\n\"password\":\"Abhirai@112\",\r\n\"mobileNumber\":\"7985853065\",\r\n\"dateOfBirth\":\"28-06-2002\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/user/userSignup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"userSignup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "otp-verification",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"email\":\"abhijeetrai7985@gmail.com\",\r\n \"otp\":\"5463\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/user/otpVerification",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"otpVerification"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"abhijeetrai7985@gmail.com\",\r\n    \"password\":\"Abhi\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"abhijeetrai7985@gmail.com\",\r\n    \"password\":\"Abhi\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-profile",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzliYTI4NDczODAzYzc5OWZhMDRhMTUiLCJ1c2VyVHlwZSI6IlVTRVIiLCJpYXQiOjE3MzgyNTM0OTgsImV4cCI6MTczODMzOTg5OH0.pT3H61hAqJNw4ek_XRobJEYc_qIQNh-IkceSY0XQXkI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/user/getProfile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"getProfile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reset-password",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzliYTI4NDczODAzYzc5OWZhMDRhMTUiLCJ1c2VyVHlwZSI6IlVTRVIiLCJpYXQiOjE3MzgyNTI5NjMsImV4cCI6MTczODMzOTM2M30.gkyxu-rRrotPT8-xB_FLHBIcbzBqpB43gvpldJnngx4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"oldPassword\":\"Abhi\",\r\n    \"newPassword\":\"Abhirai@112\",\r\n    \"confirmNewPassword\":\"Abhirai@112\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/user/resetPassword",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"resetPassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user-edit-profile",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzliYTI4NDczODAzYzc5OWZhMDRhMTUiLCJ1c2VyVHlwZSI6IlVTRVIiLCJpYXQiOjE3MzgyNTI5NjMsImV4cCI6MTczODMzOTM2M30.gkyxu-rRrotPT8-xB_FLHBIcbzBqpB43gvpldJnngx4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/user/userEditProfile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"userEditProfile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "self-delete-user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzliYTI4NDczODAzYzc5OWZhMDRhMTUiLCJ1c2VyVHlwZSI6IlVTRVIiLCJpYXQiOjE3MzgyNTI5NjMsImV4cCI6MTczODMzOTM2M30.gkyxu-rRrotPT8-xB_FLHBIcbzBqpB43gvpldJnngx4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\":\"abhijeet\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/user/userDelete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"userDelete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin-get-all-users",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Admin-change-user-status",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzliOGFiZTcxYTZmNzI4YzJiYzZjODAiLCJ1c2VyVHlwZSI6IkFETUlOIiwiaWF0IjoxNzM4MjYzNjQ3LCJleHAiOjE3MzgzNTAwNDd9.h7yNufv33mo4OnboOpe1M8OhCH-6yzyBfg3HgBVBAWg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\": \"ACTIVE\",\r\n    \"id\":\"679bbd8d19d55bc8cbedccdd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/user/updateUserStatus",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"updateUserStatus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "creat/add categories",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"abhijeetrai7985@gmail.com\",\r\n    \"password\":\"Abhi\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update category",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzliOGFiZTcxYTZmNzI4YzJiYzZjODAiLCJ1c2VyVHlwZSI6IkFETUlOIiwiaWF0IjoxNzM4MjYzNjQ3LCJleHAiOjE3MzgzNTAwNDd9.h7yNufv33mo4OnboOpe1M8OhCH-6yzyBfg3HgBVBAWg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\": \"ACTIVE\",\r\n    \"id\":\"679bbd8d19d55bc8cbedccdd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/user/updateUserStatus",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"updateUserStatus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user categories",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "get categories by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/categories/getCategoryById/67be081c222d9f89e93adf62?authorization=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2JkZDUxNTYyYjE3ZTVhNTY2MzU4NzUiLCJ1c2VyVHlwZSI6IkFETUlOIiwiaWF0IjoxNzQwNDk5NTA1LCJleHAiOjE3NDA1ODU5MDV9.DnuaU7U1Cf6ri2A0SFqFN0fNRs-SFJv8r6ehhYVtxwU",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"categories",
+						"getCategoryById",
+						"67be081c222d9f89e93adf62"
+					],
+					"query": [
+						{
+							"key": "authorization",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2JkZDUxNTYyYjE3ZTVhNTY2MzU4NzUiLCJ1c2VyVHlwZSI6IkFETUlOIiwiaWF0IjoxNzQwNDk5NTA1LCJleHAiOjE3NDA1ODU5MDV9.DnuaU7U1Cf6ri2A0SFqFN0fNRs-SFJv8r6ehhYVtxwU"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search categories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/categories/getCategoryById/67be081c222d9f89e93adf62?authorization=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2JkZDUxNTYyYjE3ZTVhNTY2MzU4NzUiLCJ1c2VyVHlwZSI6IkFETUlOIiwiaWF0IjoxNzQwNDk5NTA1LCJleHAiOjE3NDA1ODU5MDV9.DnuaU7U1Cf6ri2A0SFqFN0fNRs-SFJv8r6ehhYVtxwU",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"categories",
+						"getCategoryById",
+						"67be081c222d9f89e93adf62"
+					],
+					"query": [
+						{
+							"key": "authorization",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2JkZDUxNTYyYjE3ZTVhNTY2MzU4NzUiLCJ1c2VyVHlwZSI6IkFETUlOIiwiaWF0IjoxNzQwNDk5NTA1LCJleHAiOjE3NDA1ODU5MDV9.DnuaU7U1Cf6ri2A0SFqFN0fNRs-SFJv8r6ehhYVtxwU"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete categories",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzliYTI4NDczODAzYzc5OWZhMDRhMTUiLCJ1c2VyVHlwZSI6IlVTRVIiLCJpYXQiOjE3MzgyNTI5NjMsImV4cCI6MTczODMzOTM2M30.gkyxu-rRrotPT8-xB_FLHBIcbzBqpB43gvpldJnngx4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\":\"abhijeet\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/user/userDelete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"userDelete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete category by user id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzliYTI4NDczODAzYzc5OWZhMDRhMTUiLCJ1c2VyVHlwZSI6IlVTRVIiLCJpYXQiOjE3MzgyNTI5NjMsImV4cCI6MTczODMzOTM2M30.gkyxu-rRrotPT8-xB_FLHBIcbzBqpB43gvpldJnngx4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\":\"abhijeet\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/user/userDelete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"userDelete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin -get all categories Copy",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "create expenses",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "edit expenses",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "get  total amount with category details",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "get filterd data",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "delete expense by id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzliYTI4NDczODAzYzc5OWZhMDRhMTUiLCJ1c2VyVHlwZSI6IlVTRVIiLCJpYXQiOjE3MzgyNTI5NjMsImV4cCI6MTczODMzOTM2M30.gkyxu-rRrotPT8-xB_FLHBIcbzBqpB43gvpldJnngx4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\":\"abhijeet\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/user/userDelete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"userDelete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get monthly expense",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
